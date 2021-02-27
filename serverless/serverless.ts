@@ -5,9 +5,14 @@ import { hello } from './src/functions';
 const configedEnv = require("dotenv").config()
 
 const serverlessConfiguration: AWS = {
-  service: 'serverless',
+  service: 'AutoScalePhone',
   frameworkVersion: '2',
   custom: {
+    stages: [
+      "local",
+      "dev",
+      "production",
+    ],
     webpack: {
       webpackConfig: './webpack.config.js',
       includeModules: true
