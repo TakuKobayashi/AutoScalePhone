@@ -2,6 +2,8 @@ import type { AWS } from '@serverless/typescript';
 
 import { hello } from './src/functions';
 
+const configedEnv = require("dotenv").config()
+
 const serverlessConfiguration: AWS = {
   service: 'serverless',
   frameworkVersion: '2',
@@ -9,7 +11,11 @@ const serverlessConfiguration: AWS = {
     webpack: {
       webpackConfig: './webpack.config.js',
       includeModules: true
-    }
+    },
+    dotenv: {
+      path: './.env',
+      include: Object.keys(configedEnv.parsed),
+    },
   },
   plugins: ['serverless-webpack', 'serverless-dotenv-plugin', 'serverless-offline'],
   provider: {

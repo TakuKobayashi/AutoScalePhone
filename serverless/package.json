@@ -4,7 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --config .prettierrc --write 'src/**/*.{ts,js}'",
+    "serverless": "serverless"
   },
   "dependencies": {
     "@middy/core": "^1.5.0",
@@ -15,6 +16,7 @@
     "@serverless/typescript": "^2.16.0",
     "@types/aws-lambda": "^8.10.64",
     "@types/node": "^14.14.6",
+    "dotenv": "^8.2.0",
     "fork-ts-checker-webpack-plugin": "^6.0.0",
     "json-schema-to-ts": "^1.4.1",
     "prettier": "^2.2.1",
