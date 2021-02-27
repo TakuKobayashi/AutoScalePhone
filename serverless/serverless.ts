@@ -17,10 +17,12 @@ const serverlessConfiguration: AWS = {
       include: Object.keys(configedEnv.parsed),
     },
   },
+  useDotenv: true,
   plugins: ['serverless-webpack', 'serverless-dotenv-plugin', 'serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
+    region: 'ap-northeast-1',
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
