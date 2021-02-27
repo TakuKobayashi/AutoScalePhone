@@ -29,6 +29,7 @@ provider:
 # Twilio runtime has to be added a plugin
 plugins:
   - '@twilio-labs/serverless-twilio-runtime'
+  - 'serverless-offline'
 
 functions:
   hello-world:
